@@ -1,10 +1,8 @@
 package com.ezeapi.sample;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -455,18 +453,17 @@ public class EzeNativeSampleActivity extends Activity implements
 		JSONObject request = new JSONObject();
 		try {
 			request.put("status", "PAID_IN_FULL");
-			// date --- "dd-MM-yyyy"
-			request.put("date", "03-04-2016");
+			request.put("date", "03-04-2016");// date --- "dd-MM-yyyy"
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		ChargeApi.searchCharges(this, ChargeAPIConstants.REQ_CODE_SEARCH_CHARGE,
-				request.toString());
+		ChargeApi.searchCharges(this,
+				ChargeAPIConstants.REQ_CODE_SEARCH_CHARGE, request.toString());
 	}
 
 	private void viewCharge() {
-		ChargeApi
-				.viewCharge(this, ChargeAPIConstants.REQ_CODE_VIEW_CHARGE, chargeId);
+		ChargeApi.viewCharge(this, ChargeAPIConstants.REQ_CODE_VIEW_CHARGE,
+				chargeId);
 	}
 
 	private void updateCustomer() {
@@ -528,17 +525,6 @@ public class EzeNativeSampleActivity extends Activity implements
 	private void getTransaction() {
 		ChargeApi.viewTransaction(this,
 				ChargeAPIConstants.REQ_CODE_VIEW_TRANSACTION, strTxnId);
-		// JSONObject jsonRequest = new JSONObject();
-		// try {
-		// jsonRequest.put("agentName", "Demo User");
-		// jsonRequest.put("startDate", "1/1/2015");
-		// jsonRequest.put("endDate", "12/31/2015");
-		// jsonRequest.put("txnType", "cash");
-		// jsonRequest.put("txnStatus", "void");
-		// ChargeApi.searchTransaction(this, REQUESTCODE_SEARCH, jsonRequest);
-		// } catch (JSONException e) {
-		// e.printStackTrace();
-		// }
 	}
 
 	private void voidTxn() {
@@ -591,8 +577,7 @@ public class EzeNativeSampleActivity extends Activity implements
 	}
 
 	private void closeEzetap() {
-//		ChargeApi.close(this, ChargeAPIConstants.REQ_CODE_CLOSE);
-		ChargeApi.close(this, 1111);
+		ChargeApi.close(this, ChargeAPIConstants.REQ_CODE_CLOSE);
 	}
 
 	private boolean isTransactionIdValid() {
@@ -613,13 +598,10 @@ public class EzeNativeSampleActivity extends Activity implements
 		if (intent != null && intent.hasExtra("response"))
 			Toast.makeText(this, intent.getStringExtra("response"),
 					Toast.LENGTH_SHORT).show();
-		if (intent != null && intent.hasExtra("response"))
-			Log.d("response", intent.getStringExtra("response") + " ");
 		switch (requestCode) {
 		case ChargeAPIConstants.REQ_CODE_CASH_PAYMENT:
 		case ChargeAPIConstants.REQ_CODE_CARD_PAYMENT:
 		case ChargeAPIConstants.REQ_CODE_CHEQUE_PAYMENT:
-		case ChargeAPIConstants.REQ_CODE_UPDATE:
 			if (resultCode == RESULT_OK) {
 				try {
 					JSONObject response = new JSONObject(
@@ -666,16 +648,8 @@ public class EzeNativeSampleActivity extends Activity implements
 				}
 			}
 			break;
+		case ChargeAPIConstants.REQ_CODE_UPDATE:
 		case ChargeAPIConstants.REQ_CODE_REMOTE_PAYMENT:
-			if (resultCode == RESULT_OK) {
-				Log.d("remote pay", intent.getStringExtra("response") + " ");
-			}
-			break;
-		case 1111:
-			if (resultCode == RESULT_OK) {
-				Log.d("remote pay", intent.getStringExtra("response") + " ");
-			}
-			break;
 		default:
 			break;
 		}
