@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+
+    
+    <string name="app_launcher_name">Charge Api Sample</string>
+    <string name="activity_name">@string/app_launcher_name</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
