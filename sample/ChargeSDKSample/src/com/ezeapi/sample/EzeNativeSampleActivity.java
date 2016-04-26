@@ -671,14 +671,14 @@ public class EzeNativeSampleActivity extends Activity implements
 	private void initEzetap() {
 		JSONObject jsonRequest = new JSONObject();
 		try {
-			jsonRequest.put("demoAppKey","0b838d82-c666-45ed-909c-bc0fb9ed3ee2");
-			jsonRequest.put("prodAppKey","0b838d82-c666-45ed-909c-bc0fb9ed3ee2");
-			jsonRequest.put("merchantName", "FK");
-			jsonRequest.put("userName", "Dev");
+			jsonRequest.put("demoAppKey","Demo app key here.");
+			jsonRequest.put("prodAppKey","Prod app key here.");
+			jsonRequest.put("merchantName", "Merchant name here");
+			jsonRequest.put("userName", "user name here");
 			jsonRequest.put("currencyCode", "INR");
 			jsonRequest.put("appMode", "DEMO");
 			jsonRequest.put("captureSignature", "true");
-			jsonRequest.put("accountId", "ac_393222");
+			jsonRequest.put("accountId", "Your charge account ID here.");
 			// Set 'prepareDevice' to true if you want to prepare device while initializing
 			jsonRequest.put("prepareDevice", "false");
 		} catch (JSONException e) {
