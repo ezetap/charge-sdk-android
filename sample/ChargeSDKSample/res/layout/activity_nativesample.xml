@@ -26,14 +26,14 @@
                 android:hint="Enter your pin number for wallet transaction*"
                 android:inputType="number" />
 
-             <EditText
+            <EditText
                 android:id="@+id/txtChrgAmount"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:hint="charge Amount*"
                 android:inputType="number" />
-             
+
             <EditText
                 android:id="@+id/txtPayAmount"
                 android:layout_width="fill_parent"
@@ -125,6 +125,35 @@
                 android:background="@drawable/round_corner"
                 android:elevation="3dp"
                 android:text="Prepare Device"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/create_charge"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_corner"
+                android:elevation="3dp"
+                android:text="create charge"
+                android:textColor="@android:color/white" />
+            <Button
+                android:id="@+id/cancel_charge"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_corner"
+                android:elevation="3dp"
+                android:text="cancel charge"
+                android:textColor="@android:color/white" />
+            
+              <Button
+                android:id="@+id/update_charge"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/round_corner"
+                android:elevation="3dp"
+                android:text="update charge"
                 android:textColor="@android:color/white" />
 
             <Button
